@@ -1,7 +1,7 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
 ## Setup Instructions
-- Fork and clone this repository; then, follow the directions given in `lib/challenge.md`!
+- Fork and clone this repository; then, follow the directions given in `lib/challenge.js`!
 
 ## Submitting Your Solution
 
