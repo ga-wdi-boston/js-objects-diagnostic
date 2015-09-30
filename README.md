@@ -6,3 +6,9 @@
 ## Submitting Your Solution
 
 Once you finish (or run out of time), push your code back up to your fork on GitHub and initiate a pull request.
+
+[License](LICENSE)
+------------------
+
+Source code distributed under the MIT license. Text and ther assets copyright
+General Assembly, Inc., all rights reserved.
