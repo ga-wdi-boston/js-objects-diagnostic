@@ -1,42 +1,42 @@
 'use strict';
 
-var challenge = require('../lib/challenge.js');
+var diagnostic = require('../lib/diagnostic.js');
 
-console.log(challenge);
+console.log(diagnostic);
 
 describe('objects', function(){
   describe('answerTwo', function(){
     it('is not undefined',function(){
-      expect(challenge.answerTwo).toBeDefined();
+      expect(diagnostic.answerTwo).toBeDefined();
     });
     it('has property "name", which is not null', function(){
-      expect(challenge.answerTwo.name).toBeDefined();
-      expect(challenge.answerTwo.name).not.toBeNull();
+      expect(diagnostic.answerTwo.name).toBeDefined();
+      expect(diagnostic.answerTwo.name).not.toBeNull();
     });
     it('has property "address", which is not null', function(){
-      expect(challenge.answerTwo.address).toBeDefined();
-      expect(challenge.answerTwo.address).not.toBeNull();
+      expect(diagnostic.answerTwo.address).toBeDefined();
+      expect(diagnostic.answerTwo.address).not.toBeNull();
     });
   });
   describe('answerThree', function(){
     it('is not undefined',function(){
-      expect(challenge.answerThree).toBeDefined();
+      expect(diagnostic.answerThree).toBeDefined();
     });
     it('has property "name", which is not null', function(){
-      expect(challenge.answerThree.name).toBeDefined();
-      expect(challenge.answerThree.name).not.toBeNull();
+      expect(diagnostic.answerThree.name).toBeDefined();
+      expect(diagnostic.answerThree.name).not.toBeNull();
     });
     it('has property "species", which is not null', function(){
-      expect(challenge.answerThree.species).toBeDefined();
-      expect(challenge.answerThree.species).not.toBeNull();
+      expect(diagnostic.answerThree.species).toBeDefined();
+      expect(diagnostic.answerThree.species).not.toBeNull();
     });
     it('has property "breed", which is not null', function(){
-      expect(challenge.answerThree.breed).toBeDefined();
-      expect(challenge.answerThree.breed).not.toBeNull();
+      expect(diagnostic.answerThree.breed).toBeDefined();
+      expect(diagnostic.answerThree.breed).not.toBeNull();
     });
-    it('has method "makeNoise", which returns a string', function(){
-      expect(challenge.answerThree.makeNoise).toBeDefined();
-      expect(typeof challenge.answerThree.makeNoise()).toBe('string');
+    it('has method "vocalize", which returns a string', function(){
+      expect(diagnostic.answerThree.vocalize).toBeDefined();
+      expect(typeof diagnostic.answerThree.vocalize()).toBe('string');
     });
   });
 });
