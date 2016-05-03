@@ -1,42 +1,43 @@
 'use strict';
 
-var diagnostic = require('../lib/diagnostic.js');
+const diagnostic = require('../lib/diagnostic.js');
 
-console.log(diagnostic);
+const chai = require('chai');
+const expect = chai.expect;
 
 describe('objects', function(){
   describe('answerTwo', function(){
     it('is not undefined',function(){
-      expect(diagnostic.answerTwo).toBeDefined();
+      expect(diagnostic.answerTwo).to.exist;
     });
     it('has property "name", which is not null', function(){
-      expect(diagnostic.answerTwo.name).toBeDefined();
-      expect(diagnostic.answerTwo.name).not.toBeNull();
+      expect(diagnostic.answerTwo.name).to.exist;
+      expect(diagnostic.answerTwo.name).not.to.be.null;
     });
     it('has property "address", which is not null', function(){
-      expect(diagnostic.answerTwo.address).toBeDefined();
-      expect(diagnostic.answerTwo.address).not.toBeNull();
+      expect(diagnostic.answerTwo.address).to.exist;
+      expect(diagnostic.answerTwo.address).not.be.null;
     });
   });
   describe('answerThree', function(){
     it('is not undefined',function(){
-      expect(diagnostic.answerThree).toBeDefined();
+      expect(diagnostic.answerThree).to.exist;
     });
     it('has property "name", which is not null', function(){
-      expect(diagnostic.answerThree.name).toBeDefined();
-      expect(diagnostic.answerThree.name).not.toBeNull();
+      expect(diagnostic.answerThree.name).to.exist;
+      expect(diagnostic.answerThree.name).not.to.be.null;
     });
     it('has property "species", which is not null', function(){
-      expect(diagnostic.answerThree.species).toBeDefined();
-      expect(diagnostic.answerThree.species).not.toBeNull();
+      expect(diagnostic.answerThree.species).to.exist;
+      expect(diagnostic.answerThree.species).not.to.be.null;
     });
     it('has property "breed", which is not null', function(){
-      expect(diagnostic.answerThree.breed).toBeDefined();
-      expect(diagnostic.answerThree.breed).not.toBeNull();
+      expect(diagnostic.answerThree.breed).to.exist;
+      expect(diagnostic.answerThree.breed).not.to.be.null;
     });
     it('has method "vocalize", which returns a string', function(){
-      expect(diagnostic.answerThree.vocalize).toBeDefined();
-      expect(typeof diagnostic.answerThree.vocalize()).toBe('string');
+      expect(diagnostic.answerThree.vocalize).to.exist;
+      expect(typeof diagnostic.answerThree.vocalize()).to.a('string');
     });
   });
 });

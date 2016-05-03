@@ -7,6 +7,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-jshint": "^0.11.2",
@@ -14,9 +15,11 @@
     "grunt-jsbeautifier": "^0.2.10",
     "grunt-jscs": "^1.8.0",
     "grunt-jsonlint": "^1.0.4",
+    "grunt-mocha-test": "^0.12.7",
     "grunt-nodemon": "^0.4.0",
     "grunt-open": "^0.2.3",
     "load-grunt-config": "^0.17.1",
+    "mocha": "^2.4.5",
     "time-grunt": "^1.2.1"
   }
 }
