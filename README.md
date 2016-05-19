@@ -7,7 +7,9 @@
 1.  Fork and clone this repository.
 1.  Create a new branch, named `response`.
 1.  Checkout the `response` branch.
+1.  Install dependencies by running `npm install`
 1.  Follow the directions given in [lib/diagnostic.js](lib/diagnostic.js).
+1.  Check your responses by running `grunt test`.
 1.  Before the alotted time is up, push to your fork and issue a pull request.
 
 You may wish to refer to ["How do I submit diagnostics?"](https://github.com/ga-wdi-boston/meta/wiki/Diagnostics)
