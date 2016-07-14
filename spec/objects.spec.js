@@ -14,48 +14,48 @@ console.log(diagnostic);
 describe('objects', function(){
   describe('answerTwo', function(){
     it('is not undefined',function(){
-      return expect(diagnostic.answerTwo) !== undefined;
+      expect(diagnostic.answerTwo).to.not.equal(undefined);
     });
     it('has property "name", which is defined', function(){
-      return expect(diagnostic.answerTwo.name) !== undefined;
+      expect(diagnostic.answerTwo.name).to.not.equal(undefined);
     });
     it('has property "name", which is not null', function(){
-      return expect(diagnostic.answerTwo.name) !== null;
+      expect(diagnostic.answerTwo.name).to.not.equal(null);
     });
     it('has property "address", which is defined', function(){
-      return expect(diagnostic.answerTwo.address) !== undefined;
+      expect(diagnostic.answerTwo.address).to.not.equal(undefined);
     });
     it('has property "address", which is not null', function(){
-      return expect(diagnostic.answerTwo.address) !== null;
+      expect(diagnostic.answerTwo.address).to.not.equal(null);
     });
   });
   describe('answerThree', function(){
     it('is not undefined',function(){
-      return expect(diagnostic.answerThree) !== undefined;
+      expect(diagnostic.answerThree).to.not.equal(undefined);
     });
     it('has property "name", which is not null', function(){
-      return expect(diagnostic.answerThree.name) !== null;
+      expect(diagnostic.answerThree.name).to.not.equal(null);
     });
     it('has property "name", which is defined', function(){
-      return expect(diagnostic.answerThree.name) !== undefined;
+      expect(diagnostic.answerThree.name).to.not.equal(undefined);
     });
     it('has property "species", which is not null', function(){
-      return expect(diagnostic.answerThree.species) !== null;
+      expect(diagnostic.answerThree.species).to.not.equal(null);
     });
     it('has property "species", which is defined', function(){
-      return expect(diagnostic.answerThree.species) !== undefined;
+      expect(diagnostic.answerThree.species).to.not.equal(undefined);
     });
     it('has property "breed", which is defined', function(){
-      return expect(diagnostic.answerThree.breed) !== undefined;
+      expect(diagnostic.answerThree.breed).to.not.equal(undefined);
     });
     it('has property "breed", which is not null', function(){
-      return expect(diagnostic.answerThree.breed) !== null;
+      expect(diagnostic.answerThree.breed).to.not.equal(null);
     });
     it('has method "vocalize", which is defined', function(){
-      return expect(diagnostic.answerThree.vocalize) !== undefined;
+      expect(diagnostic.answerThree.vocalize).to.not.equal(undefined);
     });
     it('has method "vocalize", which returns a string', function(){
-      return expect(typeof diagnostic.answerThree.vocalize()) === 'string';
+      expect(typeof diagnostic.answerThree.vocalize()).to.equal('string');
     });
   });
 });
