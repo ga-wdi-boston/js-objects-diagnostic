@@ -5,5 +5,5 @@ before_install: gem install compass
 before_script:
 - 'npm install -g  grunt-cli'
 - 'grunt nag'
-- 'grunt test'
+- 'grunt test --force'
 
