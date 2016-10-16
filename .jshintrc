@@ -8,5 +8,8 @@
   "quotmark": true,
   "devel": true,
   "node": true,
-  "jasmine": true
+  "jasmine": true,
+"globals": {
+    "expect": true
+}
 }
