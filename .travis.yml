@@ -6,3 +6,4 @@ before_script:
 script:
 - 'grunt nag'
 - 'grunt test'
+email: false
