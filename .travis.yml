@@ -1,10 +1,11 @@
 language: node_js
 node_ls:
 - '4'
-before_script:
+before_script: # before running scripts
 - 'npm install'
 - 'npm install -g grunt-cli'
-script:
+script: # run these scripts
 - 'grunt nag'
 - 'grunt test'
-email: false
+notifications: # set notification options
+  email: false
