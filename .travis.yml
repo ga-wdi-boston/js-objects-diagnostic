@@ -9,3 +9,4 @@ script: # run these scripts
 - 'grunt test'
 notifications: # set notification options
   email: false
+branches: only: ["response"]
