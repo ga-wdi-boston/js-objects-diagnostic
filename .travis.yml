@@ -1,0 +1,12 @@
+language: node_js
+node_ls:
+- '4'
+before_script: 
+- 'npm install'
+- 'npm install -g grunt-cli'
+script:
+- 'grunt nag'
+- 'grunt test'
+notifications: 
+  email: false
+branches: only: ["response"]
