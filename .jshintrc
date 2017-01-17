@@ -1,6 +1,13 @@
 {
   "curly": true,
+  "devel": true,
   "eqeqeq": true,
+  "esversion": 6,
+  "latedef": true,
+  "mocha": true,
+  "noarg": true,
+  "node": true,
+  "nonew": true,
   "strict": "global",
   "undef": true,
   "sub": true,
@@ -12,4 +19,6 @@
 "globals": {
     "expect": true
 }
+  "unused": true,
+  "varstmt": true
 }
