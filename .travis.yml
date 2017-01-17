@@ -10,4 +10,5 @@ script: # run these scripts
   # whitelist
 branches:
     only:
-    - master
+    - response
+    - travis-test
