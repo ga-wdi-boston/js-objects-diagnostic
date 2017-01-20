@@ -14,23 +14,17 @@ describe('Question 2', () => {
       expect(owner).to.be.an('object');
     });
 
-    describe('name', () => {
-      it('is a property.', () => {
-        expect(owner.name).to.not.be.undefined;
-      });
+    const stringProperties = ['name', 'address'];
 
-      it('is a non-empty string.', () => {
-        expect(owner.name).to.be.a('string').that.is.not.empty;
-      });
-    });
+    stringProperties.forEach(property => {
+      describe(property, () => {
+        it('is a property.', () => {
+          expect(owner[property]).to.not.be.undefined;
+        });
 
-    describe('address', () => {
-      it('is a property.', () => {
-        expect(owner.address).to.not.be.undefined;
-      });
-
-      it('is a non-empty string.', () => {
-        expect(owner.address).to.be.a('string').that.is.not.empty;
+        it('is a non-empty string.', () => {
+          expect(owner[property]).to.be.a('string').that.is.not.empty;
+        });
       });
     });
 
@@ -56,78 +50,51 @@ describe('Question 3', () => {
       expect(pet).to.be.an('object');
     });
 
-    describe('name', () => {
-      it('is a property.', () => {
-        expect(pet.name).to.not.be.undefined;
-      });
+    const stringProperties = ['name', 'species', 'breed', 'vocalization'];
 
-      it('is a non-empty string.', () => {
-        expect(pet.name).to.be.a('string').that.is.not.empty;
-      });
-    });
+    stringProperties.forEach(property => {
+      describe(property, () => {
+        it('is a property.', () => {
+          expect(pet[property]).to.not.be.undefined;
+        });
 
-    describe('species', () => {
-      it('is a property.', () => {
-        expect(pet.species).to.not.be.undefined;
-      });
-
-      it('is a non-empty string.', () => {
-        expect(pet.species).to.be.a('string').that.is.not.empty;
-      });
-    });
-
-    describe('breed', () => {
-      it('is a property.', () => {
-        expect(pet.breed).to.not.be.undefined;
-      });
-
-      it('is a non-empty string.', () => {
-        expect(pet.breed).to.be.a('string').that.is.not.empty;
-      });
-    });
-
-    describe('vocalization', () => {
-      it('is a property.', () => {
-        expect(pet.vocalization).to.not.be.undefined;
-      });
-
-      it('is a non-empty string.', () => {
-        expect(pet.vocalization).to.be.a('string').that.is.not.empty;
+        it('is a non-empty string.', () => {
+          expect(pet[property]).to.be.a('string').that.is.not.empty;
+        });
       });
     });
   });
 });
+
+const expectedPet = {
+  name: 'Seymour',
+  species: 'Dog',
+  breed: 'Border Terrier',
+  vocalization: 'Bark'
+};
+const expectedPetValues = Object.values(expectedPet);
 
 describe('Question 4', () => {
   describe('Pet', () => {
     it('is a constructor.', () => {
       expect(() => {
-        new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+        new Pet(...expectedPetValues);
       }).to.not.throw(TypeError);
     });
 
-    const testPet = new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+    const stringProperties = ['name', 'species', 'breed', 'vocalization'];
+    const actualPet = new Pet(...expectedPetValues);
 
-    it('sets "name" as a property.', () => {
-      expect(testPet.name).to.equal('Seymour');
-    });
-
-    it('sets "species" as a property.', () => {
-      expect(testPet.species).to.equal('Dog');
-    });
-
-    it('sets "breed" as a property.', () => {
-      expect(testPet.breed).to.equal('Border Terrier');
-    });
-
-    it('sets "vocalization" as a property.', () => {
-      expect(testPet.vocalization).to.equal('Bark');
+    stringProperties.forEach(property => {
+      it(`sets "${property}" as a property.`, () => {
+        expect(actualPet[property]).to.equal(expectedPet[property]);
+      });
     });
   });
 });
 
 describe('Question 5', () => {
-  const testPet = new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+  const actualPet = new Pet(...expectedPetValues);
 
   describe('vocalize', () => {
     it('is a method on the Pet prototype.', () => {
@@ -135,7 +102,7 @@ describe('Question 5', () => {
     });
 
     it('returns the vocalization property.', () => {
-      expect(testPet.vocalize()).to.equal('Bark');
+      expect(actualPet.vocalize()).to.equal(expectedPet.vocalization);
     });
   });
 });
