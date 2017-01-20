@@ -2,9 +2,17 @@
 
 # JavaScript Objects Diagnostic
 
+## Prerequisites
+
+-   [JavaScript Objects Modeling](https://github.com/ga-wdi-boston/js-objects-modeling)
+-   [JavaScript Objects: Referencing Own Properties](https://github.com/ga-wdi-boston/js-objects-this)
+-   [JavaScript Constructors](https://github.com/ga-wdi-boston/js-objects-constructors)
+-   [JavaScript Prototypes](https://github.com/ga-wdi-boston/js-objects-prototypes)
+
 ## Instructions
 
 1.  Fork and clone this repository.
+1.  Change into the new directory.
 1.  Create a new branch, named `response`.
 1.  Checkout the `response` branch.
 1.  Install dependencies by running `npm install`
@@ -27,6 +35,15 @@ You may wish to refer to ["How do I submit diagnostics?"](https://github.com/ga-
 and other [FAQs](https://github.com/ga-wdi-boston/meta/wiki/) related to
 [forking, cloning](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone),
 and [pull requests](https://github.com/ga-wdi-boston/meta/wiki/PullRequest).
+
+You may use **any resource** other than each other to complete this diagnostic.
+This includes referencing talk materials, appropriate documentation, and
+searching for help online.
+
+You should be running `grunt nag` before diagnosing any bugs, since it finds
+some of the most common sources of errors. After `grunt nag` passes, you should
+run `grunt test` to run the included tests. Tests will tell you whether of not
+your responses are correct.
 
 ## [License](LICENSE)
 
