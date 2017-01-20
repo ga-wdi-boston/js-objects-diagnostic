@@ -2,58 +2,140 @@
 
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
+const expect = chai.expect;
 
 chai.use(chaiAsPromised);
 
-const expect = chai.expect;
+const { owner, pet, Pet } = require('../lib/diagnostic.js');
 
-const diagnostic = require('../lib/diagnostic.js');
+describe('Question 2', () => {
+  describe('owner', () => {
+    it('is an object.', () => {
+      expect(owner).to.be.an('object');
+    });
 
-describe('objects', function () {
-  describe('answerTwo', function () {
-    it('is not undefined', function () {
-      expect(diagnostic.answerTwo).to.not.equal(undefined);
+    describe('name', () => {
+      it('is a property.', () => {
+        expect(owner.name).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(owner.name).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "name", which is defined', function () {
-      expect(diagnostic.answerTwo.name).to.not.equal(undefined);
+
+    describe('address', () => {
+      it('is a property.', () => {
+        expect(owner.address).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(owner.address).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "name", which is not null', function () {
-      expect(diagnostic.answerTwo.name).to.not.equal(null);
-    });
-    it('has property "address", which is defined', function () {
-      expect(diagnostic.answerTwo.address).to.not.equal(undefined);
-    });
-    it('has property "address", which is not null', function () {
-      expect(diagnostic.answerTwo.address).to.not.equal(null);
+
+    describe('numberOfPets', () => {
+      it('is a property.', () => {
+        expect(owner.name).to.not.be.undefined;
+      });
+
+      it('is an integer.', () => {
+        expect(Number.isInteger(owner.numberOfPets)).to.be.true;
+      });
+
+      it('is non-negative.', () => {
+        expect(owner.numberOfPets).to.be.a('number').that.is.at.least(0);
+      });
     });
   });
-  describe('answerThree', function () {
-    it('is not undefined', function () {
-      expect(diagnostic.answerThree).to.not.equal(undefined);
+});
+
+describe('Question 3', () => {
+  describe('pet', () => {
+    it('is an object.', () => {
+      expect(pet).to.be.an('object');
     });
-    it('has property "name", which is not null', function () {
-      expect(diagnostic.answerThree.name).to.not.equal(null);
+
+    describe('name', () => {
+      it('is a property.', () => {
+        expect(pet.name).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(pet.name).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "name", which is defined', function () {
-      expect(diagnostic.answerThree.name).to.not.equal(undefined);
+
+    describe('species', () => {
+      it('is a property.', () => {
+        expect(pet.species).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(pet.species).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "species", which is not null', function () {
-      expect(diagnostic.answerThree.species).to.not.equal(null);
+
+    describe('breed', () => {
+      it('is a property.', () => {
+        expect(pet.breed).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(pet.breed).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "species", which is defined', function () {
-      expect(diagnostic.answerThree.species).to.not.equal(undefined);
+
+    describe('vocalization', () => {
+      it('is a property.', () => {
+        expect(pet.vocalization).to.not.be.undefined;
+      });
+
+      it('is a non-empty string.', () => {
+        expect(pet.vocalization).to.be.a('string').that.is.not.empty;
+      });
     });
-    it('has property "breed", which is defined', function () {
-      expect(diagnostic.answerThree.breed).to.not.equal(undefined);
+  });
+});
+
+describe('Question 4', () => {
+  describe('Pet', () => {
+    it('is a constructor.', () => {
+      expect(() => {
+        new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+      }).to.not.throw(TypeError);
     });
-    it('has property "breed", which is not null', function () {
-      expect(diagnostic.answerThree.breed).to.not.equal(null);
+
+    const testPet = new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+
+    it('sets "name" as a property.', () => {
+      expect(testPet.name).to.equal('Seymour');
     });
-    it('has method "vocalize", which is defined', function () {
-      expect(diagnostic.answerThree.vocalize).to.not.equal(undefined);
+
+    it('sets "species" as a property.', () => {
+      expect(testPet.species).to.equal('Dog');
     });
-    it('has method "vocalize", which returns a string', function () {
-      expect(typeof diagnostic.answerThree.vocalize()).to.equal('string');
+
+    it('sets "breed" as a property.', () => {
+      expect(testPet.breed).to.equal('Border Terrier');
+    });
+
+    it('sets "vocalization" as a property.', () => {
+      expect(testPet.vocalization).to.equal('Bark');
+    });
+  });
+});
+
+describe('Question 5', () => {
+  const testPet = new Pet('Seymour', 'Dog', 'Border Terrier', 'Bark');
+
+  describe('vocalize', () => {
+    it('is a method on the Pet prototype.', () => {
+      expect(Pet.prototype.vocalize).to.be.a('function');
+    });
+
+    it('returns the vocalization property.', () => {
+      expect(testPet.vocalize()).to.equal('Bark');
     });
   });
 });
