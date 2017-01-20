@@ -19,7 +19,7 @@ describe('Question 2', () => {
     stringProperties.forEach(property => {
       describe(property, () => {
         it('is a property.', () => {
-          expect(owner[property]).to.not.be.undefined;
+          expect(owner).to.have.property(property);
         });
 
         it('is a non-empty string.', () => {
@@ -30,7 +30,7 @@ describe('Question 2', () => {
 
     describe('numberOfPets', () => {
       it('is a property.', () => {
-        expect(owner.name).to.not.be.undefined;
+        expect(owner).to.have.property('numberOfPets');
       });
 
       it('is an integer.', () => {
@@ -55,7 +55,7 @@ describe('Question 3', () => {
     stringProperties.forEach(property => {
       describe(property, () => {
         it('is a property.', () => {
-          expect(pet[property]).to.not.be.undefined;
+          expect(pet).to.have.property(property);
         });
 
         it('is a non-empty string.', () => {
@@ -86,8 +86,14 @@ describe('Question 4', () => {
     const actualPet = new Pet(...expectedPetValues);
 
     stringProperties.forEach(property => {
-      it(`sets "${property}" as a property.`, () => {
-        expect(actualPet[property]).to.equal(expectedPet[property]);
+      describe(property, () => {
+        it('is set as a property.', () => {
+          expect(actualPet).to.have.property(property);
+        });
+
+        it('is set to the correct value.', () => {
+          expect(actualPet[property]).to.equal(expectedPet[property]);
+        });
       });
     });
   });
