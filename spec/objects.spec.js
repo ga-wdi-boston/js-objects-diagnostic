@@ -10,7 +10,6 @@ const expect = chai.expect;
 const diagnostic = require('../lib/diagnostic.js');
 
 console.log(diagnostic);
-
 describe('objects', function () {
   describe('answerTwo', function () {
     it('is not undefined', function () {
