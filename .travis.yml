@@ -1,6 +1,6 @@
 language: node_js
-node_ls:
-- '4'
+node_js:
+- '6'
 before_script: 
 - 'npm install'
 - 'npm install -g grunt-cli'
@@ -9,4 +9,6 @@ script:
 - 'grunt test'
 notifications: 
   email: false
-branches: only: ["response"]
+branches:
+  only:
+  - response
